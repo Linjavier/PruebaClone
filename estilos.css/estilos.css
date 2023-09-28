@@ -30,15 +30,19 @@ h6 {
   background-size: cover;
 }
 
-.contenedor-grid,
+
 main {
   /* display: grid; */
-  
+
   display: flex;
   height: 100vh;
   background-size: cover;
   justify-content: center;
+  flex-direction: column;
+  text-align: center;
   align-items: center;
+
+  .contenedor-grid{
 
   & .contenido-grid {
     & .hello,
@@ -48,37 +52,68 @@ main {
       text-shadow: black 3px 3px;
     }
 
-    & .emotico {
-      font-size: calc(240px + 1vw);
+    & .emoticono {
+      font-size: calc(15rem+ 1vw);
       font-style: normal;
       text-shadow: black 3px 3px;
     }
   }
 
+  /* Escritorio */
+  @media screen and (min-width: 501) {
+    padding: 0 50px;
+    display: grid;
+    /* 3 columnas y 5 filas */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr repeat(3, auto) 1fr;
+
+    & .hello {
+      font-size: calc(10rem + 1vw);
+      line-height: 9rem;
+    }
+
+    & .emoticono {
+      font-size: calc(20rem + 1vw);
+      grid-column: 2/3;
+      grid-row: 2/3;
+      line-height: 11rem;
+    }
+
+    & .world {
+      grid-column: 3/4;
+      grid-row: 3/4;
+      font-size: calc(10rem + 1vw);
+      line-height: 9rem;
+    }
+  }
+}
+
+
+
   /* ************************************** */
-  /* grid-template-rows: none; */
-  /* padding: 0 var(--margenGrid-S); */
+  /* grid-template-rows: none;
+  padding: 0 var(--margenGrid-S);
 
   grid-template-columns: repeat(6, 1fr);
-  /* grid-template-rows: [header]60px [main]1fr [footer]1fr; */
+  grid-template-rows: [header]60px [main]1fr [footer]1fr;
   grid-template-rows: [header]auto [main]auto [footer]auto;
   column-gap: var(--margenGrid-S);
   row-gap: 20px;
 
   @media only screen and (min-width: 1001px) {
-    /* padding: 0 var(--margenGrid-D); */
-    /* display: grid; */
+    padding: 0 var(--margenGrid-D);
+    display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: var(--margenGrid-D);
   }
-}
+} */
 
 /* .comida {
     background-size: cover;
-    height: 100vh;
+    height: 100vh; */
 
 
-  @media only screen and (min-width: 320px) and (max-width: 500px) and (orientation: portrait) {
+  @media only screen and (min-width: 300px) and (max-width: 500px) and (orientation: portrait) {
     @media (-webkit-min-device-pixel-ratio: 1)  {
       background-image: url(../img/smartphone/Smartphone.webp);
     }
@@ -102,7 +137,7 @@ main {
       }
     }
   }
-} */
+}
 
 /* h1 {
   color: white;
